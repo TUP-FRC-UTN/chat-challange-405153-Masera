@@ -1,0 +1,10 @@
+<div class="card">
+    <h5 class="card-header">Usuario: {{name}}</h5>
+    <div class="card-body">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" 
+        [(ngModel)]="mensaje"
+        id="mensaje" rows="3"></textarea>
+        <button class="btn btn-primary" (click)="mostrarMensaje()">Guardar</button>
+    </div>
+</div>

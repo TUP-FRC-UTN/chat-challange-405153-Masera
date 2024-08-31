@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <h5 class="card-header">Sala de Chat</h5>
+        <div class="card-body">
+          <h5 class="card-title">Conversación</h5>
+          
+          @for(mensaje of mensajes; track mensaje; let i = $index) {
+            <p class="card-text">{{mensaje}}</p>
+          }
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    @for (usuario of usuarios; track usuario; let i = $index) {
+        <div class="col-6">
+            <app-mensaje-usuario 
+                [name]="usuario.name"
+                (mensajeEnviado) = "onMensaje($event)"
+            />
+        </div>
+    }
+  </div>
+</div>
